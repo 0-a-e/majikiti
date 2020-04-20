@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="showmsg">
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="grid-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button><ion-icon name="copy"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="star"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-item>
+    <ion-chip *ngFor="let tag of showmsg.tags">
+      <ion-label class="ion-text-wrap">{{tag}}</ion-label>
+  
+  </ion-chip>
+       <!-- <span class="date">
+          <ion-note>{{ message.date }}</ion-note>
+        </span>
+      <h3>To: <ion-note>Me</ion-note></h3>
+    </ion-label>-->
+  </ion-item>
+  
+  <div class="ion-padding">
+    <p>
+    {{showmsg.text}}
+    </p>
+  </div>
+</ion-content>

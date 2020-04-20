@@ -1,0 +1,12 @@
+<ion-button (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+<ion-list>
+<ion-item>
+    <ion-label position="floating">タグを入力(,で区切る)</ion-label>
+    <ion-input [(ngModel)]="tags"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">ここにキチツイを入力</ion-label>
+  <ion-textarea [(ngModel)]="text"></ion-textarea>
+  </ion-item>
+  </ion-list>
+<ion-button (click)="post()" slot="end"><ion-icon name="pencil"></ion-icon>( ՞ةڼ◔)</ion-button>
