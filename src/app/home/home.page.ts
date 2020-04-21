@@ -1,11 +1,11 @@
-import { MessageComponent } from './../message/message.component';
 import { PostComponent } from './../post/post.component';
 import { Component } from '@angular/core';
 import { DataService, Message } from '../services/data.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { ActivatedRoute,Route,Router,NavigationExtras } from '@angular/router';
+import { ActivatedRoute, Route, Router, Routes, NavigationExtras } from '@angular/router';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',

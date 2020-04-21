@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar placeholder="検索...(´･_･`)" (search)="search($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <div *ngFor="let messages of message;let indexelement=index;">
+      <ion-item  (click)="opendetail(indexelement)" *ngIf="messages.verify">
+        <ion-label>
+          {{messages.text}}
+        </ion-label>
+        <ion-text>
+          <ion-chip *ngFor="let tag of tags">
+            <ion-label>{{tag}}</ion-label>
+          </ion-chip>
+        </ion-text>
+        </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

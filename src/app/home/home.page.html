@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
  <ion-searchbar placeholder="検索...(´･_･`)" (search)="search($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+-->
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab=home>
+        <ion-icon name="home-outline"></ion-icon>
+       <!-- <ion-badge>6</ion-badge>-->
+      </ion-tab-button>
+      <ion-tab-button tab="star">
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  <!--
   <ion-list>
     <ion-item (click)="opendetail(indexelement)" *ngFor="let messages of message;let indexelement=index;">
         <ion-label>
@@ -20,9 +32,9 @@
         </ion-text>
     </ion-item>
   </ion-list>
+-->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="post()">
       <ion-icon name="pencil"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-</ion-content>
