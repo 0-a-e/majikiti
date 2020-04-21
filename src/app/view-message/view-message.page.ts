@@ -3,7 +3,7 @@ import { ActivatedRoute,Route, Router } from '@angular/router';
 import { DataService, Message } from '../services/data.service';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { ToastController } from '@ionic/angular';
-import { Storage } from '@ionic/Storage';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-view-message',
   templateUrl: './view-message.page.html',

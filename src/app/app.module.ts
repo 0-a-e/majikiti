@@ -9,7 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { IonicStorageModule,Storage } from '@ionic/Storage';
+import { IonicStorageModule,Storage } from '@ionic/storage';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 @NgModule({

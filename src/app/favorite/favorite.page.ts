@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Storage } from '@ionic/Storage';
+import { Storage } from '@ionic/storage';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-favorite',
