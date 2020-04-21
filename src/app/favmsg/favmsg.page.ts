@@ -5,30 +5,28 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/Storage';
 @Component({
-  selector: 'app-view-message',
-  templateUrl: './view-message.page.html',
-  styleUrls: ['./view-message.page.scss'],
+  selector: 'app-favmsg',
+  templateUrl: './favmsg.page.html',
+  styleUrls: ['./favmsg.page.scss'],
 })
-export class ViewMessagePage {
+export class FavmsgPage implements OnInit {
   public message: any;
   showmsg: Object;
+  index: number;
   msg: String;
-  constructor(
-    private router: Router,
+  constructor( private router: Router,
     private data: DataService,
     private db: AngularFireDatabase,
     private route: ActivatedRoute,
     private toast: ToastController,
-    private storage:Storage
-  ) {
-    const index = this.route.snapshot.paramMap.get('index');
-      db.list('list').valueChanges().subscribe(data=> {
-        const msg = data[index];
-        this.showmsg = msg;
-        this.msg = msg["text"].replace(/\\n/, '\A');
-        console.log(this.msg);
-      });
+    private storage: Storage) {
+    this.index = parseInt(this.route.snapshot.paramMap.get('index'));
+    storage.get('favorite').then((val) => {
+      this.showmsg = val[this.index];
+    });
+    }
 
+  ngOnInit() {
   }
   getBackButtonText() {
     const win = window as any;
@@ -40,7 +38,7 @@ export class ViewMessagePage {
     console.log(link);
     window.open(link);
   }
-  async favorite() {
+  async favoriterm() {
     var fav;
     this.storage.get('favorite').then((val) => {
       console.log(val);
@@ -49,19 +47,15 @@ export class ViewMessagePage {
       } else {
         fav = [];
       }
-      const appenddict = {
-        'content': this.showmsg,
-        'fav': true
-      }
-      fav.push(appenddict);
+      fav.splice(this.index, 1);
       console.log(fav);
       this.storage.set('favorite', fav);
-      this.addtoast();
+      this.rmtoast();
     });
   }
-  async addtoast() {
+  async rmtoast() {
     const toast = await this.toast.create({
-      message: 'お気に入りに追加しました。',
+      message: 'お気に入りから削除されました。',
       duration: 2000
     });
     await toast.present();

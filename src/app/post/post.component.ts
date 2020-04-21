@@ -18,14 +18,14 @@ export class PostComponent implements OnInit {
     const appenddict = {
       "text": this.text,
       "tags": this.tags.split(','),
-      "verify": false
+      "verify": true
     }
     console.log(appenddict);
     itemlist.push(appenddict);
     this.modal.dismiss();
     const alert = await this.alert.create({
       header: 'ポストしました。',
-      message: '反映には最大で3日程の期間が必要です。しばらくお待ち下さい。',
+      message: '通常は即座に反映されますが、最大で3日程の期間が必要です。しばらくお待ち下さい。',
       buttons: ['OK']
     });
 

@@ -12,6 +12,14 @@ const routes: Routes = [
     path: 'top',
     loadChildren: () => import('./top/top.module').then( m => m.TopPageModule)
   },
+  {
+    path: 'favorite',
+    loadChildren: () => import('./favorite/favorite.module').then( m => m.FavoritePageModule)
+  },
+  {
+    path: 'favmsg/:index',
+    loadChildren: () => import('./favmsg/favmsg.module').then( m => m.FavmsgPageModule)
+  },
 ];
 
 @NgModule({

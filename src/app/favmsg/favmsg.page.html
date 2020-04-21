@@ -1,10 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-buttons>
-      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content [fullscreen]="true" *ngIf="showmsg">
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
@@ -18,11 +19,11 @@
       <ion-fab-button (click)="copyMessage(msg)"><ion-icon name="copy"></ion-icon></ion-fab-button>
     </ion-fab-list>
     <ion-fab-list side="top">
-      <ion-fab-button (click)="favorite()"><ion-icon name="star"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="favoriterm()"><ion-icon name="trash"></ion-icon></ion-fab-button>
     </ion-fab-list>
   </ion-fab>
   <ion-item>
-    <ion-chip color="primary" *ngFor="let tag of showmsg.tags">
+    <ion-chip color="primary" *ngFor="let tag of showmsg.content.tags">
       <ion-label class="ion-text-wrap">{{tag}}</ion-label>
   
   </ion-chip>
@@ -35,7 +36,7 @@
   
   <div class="ion-padding">
     <p style="white-space: pre;">
-    {{msg}}
+    {{showmsg.content.text}}
     </p>
   </div>
 </ion-content>

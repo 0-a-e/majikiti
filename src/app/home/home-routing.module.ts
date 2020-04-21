@@ -11,7 +11,7 @@ const routes: Routes = [
                 path: 'home', loadChildren: () => import('../top/top.module').then(m=>m.TopPageModule)
             },
             {
-                path: 'star', loadChildren: () => import('../top/top.module').then(m=>m.TopPageModule)
+                path: 'star', loadChildren: () => import('../favorite/favorite.module').then(m=>m.FavoritePageModule)
             }
         ]
     }, {

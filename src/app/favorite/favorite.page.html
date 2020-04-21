@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>お気に入り</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div *ngFor="let messages of message;let indexelement=index;">
+      <ion-item (click)="opendetail(indexelement)">
+        <ion-label>
+          {{messages.content.text}}
+        </ion-label>
+       <!-- <ion-text>
+         <ion-chip *ngFor="let tag of tags">
+            <ion-label>{{tag}}</ion-label>
+          </ion-chip>
+        </ion-text>-->
+        </ion-item>
+    </div>
+    <div *ngIf="!message">
+  <ion-item><ion-label>まだお気に入りに何も追加されていません。</ion-label></ion-item>
+    </div>
+  </ion-list>
+</ion-content>

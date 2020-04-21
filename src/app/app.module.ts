@@ -9,13 +9,20 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule,Storage } from '@ionic/Storage';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 @NgModule({
   declarations: [AppComponent,PostComponent],
   entryComponents: [PostComponent],
-  imports: [FormsModule,BrowserModule, IonicStorageModule.forRoot(),IonicModule.forRoot(),AppRoutingModule, AngularFireModule.initializeApp(environment.firebase),AngularFireDatabaseModule],
+  imports: [FormsModule,
+    BrowserModule,
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
