@@ -11,7 +11,7 @@ import { Storage } from '@ionic/Storage';
 })
 export class ViewMessagePage {
   public message: any;
-  showmsg: Object;
+  showmsg: any;
   msg: String;
   constructor(
     private router: Router,
@@ -36,7 +36,7 @@ export class ViewMessagePage {
     return mode === 'ios' ? 'Inbox' : '';
   }
   tweet() {
-    const link = `http://twitter.com/share?&text=${this.msg}`;
+    const link = `http://twitter.com/intent/tweet?&text=${this.msg}`;
     console.log(link);
     window.open(link);
   }
@@ -66,7 +66,7 @@ export class ViewMessagePage {
     });
     await toast.present();
   }
-  async copyMessage(val: string){
+  async copyMessage(val){
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';

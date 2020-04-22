@@ -17,7 +17,7 @@ export class FavoritePage implements OnInit {
     this.storage.get('favorite').then((val) => {
       console.log(val);
       if (val) {
-        this.message = val;
+        this.message = val.reverse();
       }
     });
   }

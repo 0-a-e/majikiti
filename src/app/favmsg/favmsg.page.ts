@@ -11,7 +11,7 @@ import { Storage } from '@ionic/Storage';
 })
 export class FavmsgPage implements OnInit {
   public message: any;
-  showmsg: Object;
+  showmsg: any;
   index: number;
   msg: String;
   constructor( private router: Router,
@@ -22,7 +22,8 @@ export class FavmsgPage implements OnInit {
     private storage: Storage) {
     this.index = parseInt(this.route.snapshot.paramMap.get('index'));
     storage.get('favorite').then((val) => {
-      this.showmsg = val[this.index];
+      const rv = val.reverse();
+      this.showmsg = rv[this.index];
     });
     }
 
@@ -34,7 +35,7 @@ export class FavmsgPage implements OnInit {
     return mode === 'ios' ? 'Inbox' : '';
   }
   tweet() {
-    const link = `http://twitter.com/share?&text=${this.msg}`;
+    const link = `http://twitter.com/intent/tweet?&text=${this.showmsg["text"]}`;
     console.log(link);
     window.open(link);
   }
@@ -43,7 +44,7 @@ export class FavmsgPage implements OnInit {
     this.storage.get('favorite').then((val) => {
       console.log(val);
       if (val) {
-        fav = val;
+        fav = val();
       } else {
         fav = [];
       }
@@ -60,7 +61,7 @@ export class FavmsgPage implements OnInit {
     });
     await toast.present();
   }
-  async copyMessage(val: string){
+  async copyMessage(val){
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';

@@ -16,17 +16,8 @@ export class HomePage {
   message: any;
   async ionViewWillEnter(){
     await this.db.list('list').valueChanges().subscribe(data=> {
-      this.message = data;
+      this.message = data.reverse();
     });
-  }
-  opendetail(index) {
-    console.log(index);
-    this.router.navigateByUrl(`/message/${index}`);
-  }
-  refresh(ev) {
-    setTimeout(() => {
-      ev.detail.complete();
-    }, 3000);
   }
 
   async post() {
@@ -35,9 +26,4 @@ export class HomePage {
     });
     md.present();
   }
-  search(ev) {
-    const msg = this.dat.getMessages();
-    console.log(ev.target.value);
-  }
-
 }
