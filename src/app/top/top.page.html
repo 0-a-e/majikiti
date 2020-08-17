@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-searchbar placeholder="検索...(´･_･`)" (search)="search($event)"></ion-searchbar>
+    <ion-searchbar placeholder="検索(´･_･`)" (search)="search($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -22,4 +22,93 @@
         </ion-item>
     </div>
   </ion-list>
+  <!-- Skeleton screen -->
+  <div *ngIf="!message">
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

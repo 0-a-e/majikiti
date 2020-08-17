@@ -24,7 +24,7 @@ export class PostComponent implements OnInit {
     itemlist.push(appenddict);
     this.modal.dismiss();
     const alert = await this.alert.create({
-      header: 'ポストしました。',
+      header: '追加しました。',
       message: '通常は即座に反映されますが、最大で3日程の期間が必要です。しばらくお待ち下さい。',
       buttons: ['OK']
     });

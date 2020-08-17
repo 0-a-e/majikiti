@@ -3,6 +3,11 @@
     <ion-buttons>
       <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button slot="end">
+      <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -18,13 +23,12 @@
       <ion-fab-button (click)="copyMessage(msg)"><ion-icon name="copy"></ion-icon></ion-fab-button>
     </ion-fab-list>
     <ion-fab-list side="top">
-      <ion-fab-button (click)="favorite()"><ion-icon name="star"></ion-icon></ion-fab-button>
+      <ion-fab-button (click)="favfunc()"><ion-icon [name]="icon"></ion-icon></ion-fab-button>
     </ion-fab-list>
   </ion-fab>
   <ion-item>
-    <ion-chip color="primary" *ngFor="let tag of showmsg.tags">
+    <ion-chip color="primary" *ngFor="let tag of tags">
       <ion-label class="ion-text-wrap">{{tag}}</ion-label>
-  
   </ion-chip>
        <!-- <span class="date">
           <ion-note>{{ message.date }}</ion-note>

@@ -1,4 +1,3 @@
-import { PostComponent } from './../post/post.component';
 import { Component } from '@angular/core';
 import { DataService, Message } from '../services/data.service';
 import { AlertController, ModalController } from '@ionic/angular';
@@ -18,12 +17,5 @@ export class HomePage {
     await this.db.list('list').valueChanges().subscribe(data=> {
       this.message = data.reverse();
     });
-  }
-
-  async post() {
-    const md = await this.modal.create({
-      component: PostComponent
-    });
-    md.present();
   }
 }

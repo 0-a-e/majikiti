@@ -27,6 +27,7 @@
     "@ionic/angular": "^5.0.0",
     "@ionic/storage": "^2.2.0",
     "cordova-android": "8.1.0",
+    "cordova-browser": "6.0.0",
     "core-js": "^2.5.4",
     "firebase": "^7.14.1",
     "rxjs": "~6.5.1",
@@ -41,6 +42,7 @@
     "@angular/language-service": "~8.2.14",
     "@capacitor/cli": "2.0.1",
     "@ionic/angular-toolkit": "^2.1.1",
+    "@ionic/lab": "3.2.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
@@ -76,7 +78,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }
