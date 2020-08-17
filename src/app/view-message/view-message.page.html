@@ -4,8 +4,8 @@
       <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="secondary">
-      <ion-button slot="end">
-      <ion-icon slot="icon-only" name="create"></ion-icon>
+      <ion-button (click)="openmodal()" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

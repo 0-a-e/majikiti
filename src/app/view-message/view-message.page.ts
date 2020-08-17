@@ -1,10 +1,10 @@
+import { ReportComponent } from './../report/report.component';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Route, Router } from '@angular/router';
 import { DataService, Message } from '../services/data.service';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { ToastController } from '@ionic/angular';
+import { ToastController,ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/Storage';
-import { exception } from 'console';
 @Component({
   selector: 'app-view-message',
   templateUrl: './view-message.page.html',
@@ -14,7 +14,7 @@ export class ViewMessagePage {
   public message: any;
   showmsg: any;
   tags: string[] = new Array();
-  msg: String;
+  msg: string;
   icon: String;
   index: any;
   constructor(
@@ -23,12 +23,13 @@ export class ViewMessagePage {
     private db: AngularFireDatabase,
     private route: ActivatedRoute,
     private toast: ToastController,
-    private storage:Storage
+    private storage: Storage,
+    public modalController: ModalController
   ) {
     this.index = this.route.snapshot.paramMap.get('index');
     const state = this.route.snapshot.paramMap.get('state');
     if (state == "online") {
-      //dbから全取得じゃなくてその番号だけ取得するようにしよう
+      //dbから全取得じゃなくてその番号だけ取得するようにsuru
       db.list('list').valueChanges().subscribe(data => {
         this.showmsg = data[this.index];
         this.msg = this.showmsg["text"].replace(/\\n/, '\A');
@@ -66,13 +67,26 @@ export class ViewMessagePage {
     }
 }
 
+  async openmodal() {
+    const modal = await this.modalController.create({
+      component: ReportComponent,
+      componentProps: {
+        'index': this.index,
+        'msg': this.msg,
+        'tag': this.tags
+      }
+    });
+    return await modal.present();
+  }
+  
   getBackButtonText() {
     const win = window as any;
     const mode = win && win.Ionic && win.Ionic.mode;
     return mode === 'ios' ? 'Inbox' : '';
   }
   tweet() {
-    const link = `http://twitter.com/intent/tweet?&text=${this.msg}`;
+    let msg = this.msg.replace(/\r?\n/g, '%0a');
+    let link = 'http://twitter.com/intent/tweet?&text=' + msg;
     console.log(link);
     window.open(link);
   }

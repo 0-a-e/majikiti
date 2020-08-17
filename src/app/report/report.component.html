@@ -1,0 +1,50 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>提案と報告</ion-title>
+    <ion-buttons slot="end">
+        <ion-button (click)="closemodal()" slot="end">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+<ion-list>
+  <ion-radio-group (ionChange)="selecter($event)">
+    <ion-item>
+      <ion-label>個人情報が含まれる</ion-label>
+      <ion-radio slot="start" value="privacy"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>不適切なコンテンツ</ion-label>
+      <ion-radio slot="start" value="inappropriate"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>タグの修正</ion-label>
+      <ion-radio slot="start" value="tag"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>誹謗中傷</ion-label>
+      <ion-radio slot="start" value="slander"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>誤字脱字</ion-label>
+      <ion-radio slot="start" value="typo"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>その他</ion-label>
+      <ion-radio slot="start" value="other"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+<ion-item>
+  <ion-label position="floating">理由や詳細を入力してください。（必須）</ion-label>
+  <ion-textarea [(ngModel)]="text"></ion-textarea>
+</ion-item>
+<ion-button (click)="post()" [disabled]="!select || !text" expand="block">報告</ion-button>
+</ion-content>

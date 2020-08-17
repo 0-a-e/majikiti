@@ -1,3 +1,4 @@
+import { ReportComponent } from './report/report.component';
 import { PostComponent } from './post/post.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,19 +14,20 @@ import { IonicStorageModule,Storage } from '@ionic/Storage';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 @NgModule({
-  declarations: [AppComponent,PostComponent],
-  entryComponents: [PostComponent],
+  declarations: [AppComponent,PostComponent,ReportComponent],
+  entryComponents: [PostComponent,ReportComponent],
   imports: [FormsModule,
     BrowserModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    ReportComponent,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
