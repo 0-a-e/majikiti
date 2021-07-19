@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.spila.majikiti" version=" 1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.spila.majikiti" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>マジキチ</name>
     <description>キチガイ向けキチツイ用アプリです(っ՞ةڼ◔⊂)</description>
-    <author email="verneemix2.vlv@gmail.com" href="http://0-a-e.tk">🍊</author>
+    <author email="0ae@protonmail.com" href="http://0-a-e.tk">🍊</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

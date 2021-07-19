@@ -26,7 +26,6 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.6.11",
     "@ionic/storage": "^2.2.0",
-    "cordova-android": "8.1.0",
     "cordova-browser": "6.0.0",
     "core-js": "^2.5.4",
     "firebase": "^7.14.1",
@@ -47,6 +46,8 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "cordova-android": "^9.1.0",
+    "cordova-android-support-gradle-release": "^3.0.1",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.0",
@@ -75,11 +76,12 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-android-support-gradle-release": {}
     },
     "platforms": [
-      "android",
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }
