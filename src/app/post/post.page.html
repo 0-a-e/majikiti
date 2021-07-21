@@ -5,27 +5,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-  <div style=" display: flex;align-items: center;">
-  <ion-item style="width:85%; float: left;">
-      <ion-label position="floating">タグを入力(1つ以上のタグが必要です。)</ion-label>
-      <ion-input [(ngModel)]="tag"></ion-input>
-  </ion-item>
-  <ion-fab-button style="float: right; margin-left: 5%;" (click)="addtags()"><ion-icon name="add-circle-outline"></ion-icon></ion-fab-button>
-</div>
-  <ion-chip *ngFor="let tag of tags; let i = index" (click)="delete(i)">
-    <ion-label>{{ tag }}</ion-label>
+<ion-content style="text-align:center;">
+  <ion-list style="width:100%;text-align:center;">
+    <div style="display: flex;align-items: center;">
+      <ion-item lines="none" class="addtagbox">
+        <ion-input placeholder="タグを入力.." class="addtagtxtbox" [(ngModel)]="tag"></ion-input>
+      </ion-item>
+      <ion-button class="addtagbutton" size="large" (click)="addtags()"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+    </div>
+    <ion-chip *ngFor="let tag of tags; let i = index" (click)="delete(i)">
+      <ion-label>{{ tag }}</ion-label>
       <ion-icon name="close-circle"></ion-icon>
-  </ion-chip>
-  <ion-item>
-    <ion-label position="floating">ここにキチツイを入力</ion-label>
-    <ion-textarea [(ngModel)]="text"></ion-textarea>
+    </ion-chip>
+    <ion-item lines="none" class="twibox">
+      <ion-textarea placeholder="キチツイを入力.." class="twiarea" [(ngModel)]="text"></ion-textarea>
     </ion-item>
-    </ion-list>
-    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-      <ion-fab-button [disabled]="!text && tags.length == 0" (click)="post()">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  </ion-list>
+    
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button [disabled]="!text && tags.length == 0" (click)="post()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

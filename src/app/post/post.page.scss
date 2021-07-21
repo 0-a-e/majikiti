@@ -1,0 +1,27 @@
+.addtagbutton {
+    float: right;
+    --border-radius: 0px 50px 50px 0px;
+    --box-shadow:none;
+    --background:#007DFE;
+}
+.addtagtxtbox{
+    box-shadow: none;
+    --background: #F2F2F2;
+    --placeholder-color: #626262;
+}
+.addtagbox{
+    border-radius:50px 0px 0px 50px;
+    width:78%;
+    float: left;
+    --padding-top: 5.5px;
+    --padding-bottom: 5.5px;
+    --background: #F2F2F2;
+}
+.twibox{
+    --background: #F2F2F2;
+    --border-radius: 20px;
+    width: 92%;
+}
+.twiarea{
+    --placeholder-color: #626262;
+}
